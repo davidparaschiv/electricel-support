@@ -1,6 +1,6 @@
 # Suport Electricel
 
-Website static separat de aplicația Elecricel.ro. Toate resursele sale sunt în acest folder.
+Website static separat de aplicația Electricel.ro. Toate resursele sale sunt în acest folder.
 
 ## Publicare
 

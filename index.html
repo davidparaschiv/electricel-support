@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e5f4ff">
+  <meta name="description" content="Centrul de suport pentru aplicația Elecricel.ro.">
+  <title>Suport Electricel</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon-only.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Suport Electricel — pagina principală">
+      <img src="assets/logo.svg" alt="Elecricel.ro">
+      <span>Suport</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">CENTRUL DE AJUTOR ELECRICEL.RO</p>
+        <h1 id="page-title">Suport <em>Electricel</em></h1>
+        <p class="lead">Ai o întrebare despre cont, verificare sau abonament? Trimite-ne un mesaj și echipa noastră îți va răspunde cât mai curând.</p>
+      </div>
+      <img class="hero-icon" src="assets/icon-only.svg" alt="" aria-hidden="true">
+    </section>
+
+    <section class="support-card" aria-labelledby="contact-title">
+      <div class="section-heading">
+        <p class="eyebrow">CONTACT</p>
+        <h2 id="contact-title">Cum te putem ajuta?</h2>
+        <p>Completează subiectul și mesajul. La trimitere se va deschide Outlook, cu e-mailul pregătit pentru echipa de suport.</p>
+      </div>
+      <form id="support-form">
+        <label for="subject">Subiect</label>
+        <input id="subject" name="subject" type="text" maxlength="120" autocomplete="off" required placeholder="De exemplu: Nu pot accesa contul">
+
+        <label for="message">Mesaj</label>
+        <textarea id="message" name="message" rows="7" maxlength="3000" required placeholder="Descrie problema și pașii pe care i-ai urmat."></textarea>
+
+        <button type="submit">Trimite mesajul</button>
+      </form>
+      <p class="direct-contact">Ne poți scrie și direct la <a href="mailto:support@support-electricel.com">support@support-electricel.com</a>.</p>
+    </section>
+
+    <section class="legal-section" aria-labelledby="legal-title">
+      <p class="eyebrow">INFORMAȚII LEGALE</p>
+      <h2 id="legal-title">Documente și politici</h2>
+      <div class="legal-links">
+        <a href="privacy-policy.html"><span>Politica de confidențialitate</span><b aria-hidden="true">→</b></a>
+        <a href="terms-of-service.html"><span>Termeni și condiții</span><b aria-hidden="true">→</b></a>
+        <a href="delete-user-policy.html"><span>Ștergerea contului</span><b aria-hidden="true">→</b></a>
+      </div>
+    </section>
+
+    <section class="stores" aria-labelledby="stores-title">
+      <h2 id="stores-title">Disponibil pe</h2>
+      <div class="store-links">
+        <a class="store-badge" href="./" aria-label="Google Play — momentan revine la pagina principală">
+          <svg viewBox="0 0 36 40" aria-hidden="true"><path fill="#34a853" d="M2.2 2.2A4 4 0 0 0 1 5.1v29.8a4 4 0 0 0 1.2 2.9l17-17.8z"/><path fill="#fbbc04" d="m25 13.9-5.8 6.1 5.8 6.1 7-4a2.4 2.4 0 0 0 0-4.2z"/><path fill="#4285f4" d="M2.2 2.2 19.2 20l5.8-6.1L6.1 3.1a4.2 4.2 0 0 0-3.9-.9z"/><path fill="#ea4335" d="M2.2 37.8a4.2 4.2 0 0 0 3.9-.9L25 26.1 19.2 20z"/></svg>
+          <span><small>DESCARCĂ DIN</small>Google Play</span>
+        </a>
+        <a class="store-badge" href="./" aria-label="App Store — momentan revine la pagina principală">
+          <svg viewBox="0 0 32 38" aria-hidden="true"><path fill="currentColor" d="M26.7 20.1c0-4.6 3.8-6.8 4-7-2.2-3.2-5.5-3.6-6.7-3.7-2.8-.3-5.5 1.7-6.9 1.7-1.4 0-3.6-1.7-6-1.6-3 .1-5.9 1.8-7.5 4.5-3.3 5.7-.8 14 2.3 18.6 1.5 2.2 3.3 4.7 5.7 4.6 2.3-.1 3.2-1.5 5.9-1.5 2.8 0 3.6 1.5 6 1.4 2.5 0 4.1-2.2 5.6-4.4 1.8-2.6 2.5-5.1 2.5-5.3-.1 0-4.9-1.9-4.9-7.3zM22.2 6.4A7.2 7.2 0 0 0 23.9 1a7.3 7.3 0 0 0-4.8 2.5 6.9 6.9 0 0 0-1.8 5.1c1.8.1 3.7-.9 4.9-2.2z"/></svg>
+          <span><small>DESCARCĂ DIN</small>App Store</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/logo.svg" alt="Elecricel.ro">
+    <p>Suport pentru aplicația Elecricel.ro</p>
+    <nav aria-label="Documente legale">
+      <a href="privacy-policy.html">Confidențialitate</a>
+      <a href="terms-of-service.html">Termeni</a>
+      <a href="delete-user-policy.html">Ștergerea contului</a>
+    </nav>
+  </footer>
+  <script src="support.js"></script>
+</body>
+</html>

@@ -3,6 +3,7 @@ set -euo pipefail
 
 SOURCE_BRANCH="${SOURCE_BRANCH:-master}"
 PUBLISH_BRANCH="gh-pages"
+TEMP_BRANCH="electricel-pages-publish-$$"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPOSITORY_ROOT="$(git -C "$SCRIPT_DIR" rev-parse --show-toplevel)"
 REMOTE_URL="$(git -C "$REPOSITORY_ROOT" remote get-url origin)"
@@ -24,6 +25,9 @@ fi
 PUBLISH_DIR="$(mktemp -d "${TMPDIR:-/tmp}/electricel-pages.XXXXXX")"
 cleanup() {
   git -C "$REPOSITORY_ROOT" worktree remove --force "$PUBLISH_DIR" >/dev/null 2>&1 || true
+  if git -C "$REPOSITORY_ROOT" show-ref --verify --quiet "refs/heads/$TEMP_BRANCH"; then
+    git -C "$REPOSITORY_ROOT" branch -D "$TEMP_BRANCH" >/dev/null 2>&1 || true
+  fi
 }
 trap cleanup EXIT
 
@@ -36,7 +40,7 @@ else
   git -C "$REPOSITORY_ROOT" worktree add --quiet --detach "$PUBLISH_DIR" "$SOURCE_REF"
 fi
 
-git -C "$PUBLISH_DIR" checkout --quiet --orphan electricel-pages-publish
+git -C "$PUBLISH_DIR" checkout --quiet --orphan "$TEMP_BRANCH"
 git -C "$PUBLISH_DIR" rm -rf --quiet .
 git -C "$REPOSITORY_ROOT" archive "$SOURCE_REF:site" | tar -x -C "$PUBLISH_DIR"
 touch "$PUBLISH_DIR/.nojekyll"

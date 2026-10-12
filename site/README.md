@@ -1,6 +1,6 @@
-# Suport Electricel
+# Suport PFA Verificați
 
-Website static separat de aplicația Electricel. Toate resursele sale sunt în acest folder.
+Website static separat de aplicația PFA Verificați. Toate resursele sale sunt în acest folder.
 
 ## Publicare
 

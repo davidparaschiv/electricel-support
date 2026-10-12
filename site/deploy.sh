@@ -3,7 +3,7 @@ set -euo pipefail
 
 SOURCE_BRANCH="${SOURCE_BRANCH:-master}"
 PUBLISH_BRANCH="gh-pages"
-TEMP_BRANCH="electricel-pages-publish-$$"
+TEMP_BRANCH="pfa-verificati-pages-publish-$$"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPOSITORY_ROOT="$(git -C "$SCRIPT_DIR" rev-parse --show-toplevel)"
 REMOTE_URL="$(git -C "$REPOSITORY_ROOT" remote get-url origin)"
@@ -22,7 +22,7 @@ if ! git -C "$REPOSITORY_ROOT" cat-file -e "$SOURCE_REF:site/index.html"; then
   exit 1
 fi
 
-PUBLISH_DIR="$(mktemp -d "${TMPDIR:-/tmp}/electricel-pages.XXXXXX")"
+PUBLISH_DIR="$(mktemp -d "${TMPDIR:-/tmp}/pfa-verificati-pages.XXXXXX")"
 cleanup() {
   git -C "$REPOSITORY_ROOT" worktree remove --force "$PUBLISH_DIR" >/dev/null 2>&1 || true
   if git -C "$REPOSITORY_ROOT" show-ref --verify --quiet "refs/heads/$TEMP_BRANCH"; then
@@ -45,7 +45,7 @@ git -C "$PUBLISH_DIR" rm -rf --quiet .
 git -C "$REPOSITORY_ROOT" archive "$SOURCE_REF:site" | tar -x -C "$PUBLISH_DIR"
 touch "$PUBLISH_DIR/.nojekyll"
 git -C "$PUBLISH_DIR" add --all
-git -C "$PUBLISH_DIR" commit --quiet -m "Deploy Suport Electricel"
+git -C "$PUBLISH_DIR" commit --quiet -m "Deploy Suport PFA Verificați"
 
 if [[ -n "$REMOTE_COMMIT" ]]; then
   git -C "$PUBLISH_DIR" push origin "HEAD:refs/heads/$PUBLISH_BRANCH" \
@@ -68,4 +68,4 @@ else
   echo "Deploy finalizat. Configurează o singură dată GitHub Pages cu branch-ul gh-pages și folderul / (root)."
 fi
 
-echo "Suport Electricel a fost publicat din $SOURCE_BRANCH în $PUBLISH_BRANCH."
+echo "Suport PFA Verificați a fost publicat din $SOURCE_BRANCH în $PUBLISH_BRANCH."

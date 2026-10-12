@@ -9,7 +9,7 @@ form.addEventListener('submit', (event) => {
   const subject = document.querySelector('#subject').value.trim();
   const message = document.querySelector('#message').value.trim();
   const query = new URLSearchParams({
-    to: 'support@support-electricel.com',
+    to: 'support@pfa-verificati.ro',
     subject,
     body: message,
   });

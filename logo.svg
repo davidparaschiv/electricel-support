@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 150" role="img" aria-labelledby="title desc">
+ <title id="title">PFA Verificați</title>
+ <desc id="desc">Scut galben cu bifă și numele aplicației</desc>
+ <g transform="translate(8 7)">
+  <circle cx="68" cy="68" r="62" fill="#171713" stroke="#f4c900" stroke-width="8"/>
+  <path d="M68 25 106 39v29c0 27-16 46-38 57-22-11-38-30-38-57V39z" fill="#f4c900"/>
+  <path d="m47 69 15 15 29-33" fill="none" stroke="#171713" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+ </g>
+ <text x="157" y="72" font-family="Arial, sans-serif" font-size="55" font-weight="800" fill="#171713">PFA</text>
+ <text x="157" y="119" font-family="Arial, sans-serif" font-size="39" font-weight="700" fill="#6a5900">Verificați</text>
+</svg>
